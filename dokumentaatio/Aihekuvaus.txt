@@ -1,0 +1,3 @@
+Aihe: Graafinen laskin/ kuvaajanpiirt‰j‰ 
+
+Piirt‰‰ funktion kuvaaja. K‰ytt‰j‰ syˆtt‰‰ funktion tyyliin 2*x + 3 tai pow(2,x) + 2.Kuvaajia voi piirt‰‰ p‰‰llekk‰in useammalle funktiolle. Kuvaajalta voi etsi‰ pisteit‰ y:n tai x:n arvolla. K‰ytt‰j‰ m‰‰ritt‰‰ x:n ja y:n maksimin, joiden perusteella kuvaaja piirret‰‰n. Mahdollisesti jonkin n‰pp‰imistˆohjaus, jolla on helppo siirty‰ kuvaajalla tarkastelemaan toista kohtaa tai zoomata.   
