@@ -1,0 +1,22 @@
+Ydintoiminnot:
+
+-laskee funktion arvoja
+-piirt‰‰ funktion kuvaajan
+-funktio saa sis‰lt‰‰ seuraavia toimituksia: 
+	-  +, -, *, /
+	- potenssi, merkit‰‰n a^b
+	- log ja ln
+	- itseisarvo, merkit‰‰n abs(a)
+	- sin, cos, tan, sek‰ arkusfunktiot
+	- neliˆjuuri, merkit‰‰n sqt(a)
+	- muuttuja merkit‰‰n aina x
+
+-k‰ytt‰j‰ m‰‰ritt‰‰ piirtoasetukset, piirtov‰lin minX - maxX, sek‰ vertikaalisen mittakaavan minY - maxY
+ 	
+
+Lis‰toiminnot
+
+
+-derivaatta & integraali
+-x:n arvon laskeminen y:n arvolla
+-vakioiden m‰‰rittely, esimerkiksi m‰‰ritet‰‰n a = 2, jolloin x + a luetaan x + 2
