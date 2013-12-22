@@ -1,3 +1,8 @@
 16.12. 2 tuntia, repositorion luominen, gitin harjoittelu ja asetukset, aihem‰‰rittely 
 17.12 2 tuntia, ensimm‰inen luokkakaavio, ohjelmoinnin aloittelu
 18.12 4 tuntia, ohjelmointia, luokkakaavio, testej‰
+20.12 2 tuntia, ohjelmointia
+21.12 4 tuntia, ohjelmointia
+22.12.3 tuntia, ohjelmointia, testej‰, luokkakaavio
+
+ 

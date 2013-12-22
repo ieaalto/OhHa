@@ -16,9 +16,6 @@ public class Funktiohallinta {
     private int resoluutio = 1;
     private double askel = 1;
     
-    /**
-     *
-     */
     public Funktiohallinta(){};
 
     /**

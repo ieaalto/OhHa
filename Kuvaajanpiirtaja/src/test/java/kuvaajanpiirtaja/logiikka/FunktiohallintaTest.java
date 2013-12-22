@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package kuvaajanpiirtaja.logiikka;
 
 import kuvaajanpiirtaja.logiikka.Funktiohallinta;
@@ -31,6 +28,13 @@ public class FunktiohallintaTest {
         assertTrue(!hallinta.lisaaFunktio("2-+2++"));        
         
     }
+    
+    @Test
+    public void funktioitaEiLisataVaarallaSyotteella2(){
+        assertTrue(!hallinta.lisaaFunktio("x + L + 2"));
+        assertTrue(!hallinta.lisaaFunktio(""));
+    }
+    
     @Test
     public void funktiotaEiLisataMuuttujattomallaSyotteella(){
         assertTrue(!hallinta.lisaaFunktio("2"));
@@ -44,13 +48,13 @@ public class FunktiohallintaTest {
         assertTrue(hallinta.lisaaFunktio("2*x - 1"));
         assertTrue(hallinta.lisaaFunktio("x^2 + 2/3"));
     }
-   /* @Test
+    @Test
     public void funktioLisataanOikeallaSyotteella2(){        
         assertTrue(hallinta.lisaaFunktio("log(x) + ln(x)"));
         assertTrue(hallinta.lisaaFunktio("abs(x - sin(1))"));
         assertTrue(hallinta.lisaaFunktio("sqt(x - cos(1))"));
         assertTrue(hallinta.lisaaFunktio("e + pi*x"));
-    }*/
+    }
     
     @Test 
     public void laskePisteetPalauttaaNullJosEiFunktioitaLisatty(){
