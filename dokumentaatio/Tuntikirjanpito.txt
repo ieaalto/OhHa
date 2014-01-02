@@ -4,5 +4,7 @@
 20.12 2 tuntia, ohjelmointia
 21.12 4 tuntia, ohjelmointia
 22.12.3 tuntia, ohjelmointia, testejä, luokkakaavio
-
+30.12 3 tuntia, ohjelmointia
+1.1   3 tuntia, ohjelmointia
+2.1   5 tuntia, ohjelmointia, testeja, sekvenssikaavioita
  

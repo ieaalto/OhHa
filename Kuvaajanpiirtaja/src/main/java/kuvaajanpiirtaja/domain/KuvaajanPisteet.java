@@ -7,7 +7,7 @@ import java.util.List;
  * Laskee ja tallentaa pisteet, joiden mukaan kuvaaja piirretään.
  */
 public class KuvaajanPisteet {
-    private List<Piste> pisteet = new ArrayList<>();
+    private ArrayList<Piste> pisteet = new ArrayList<>();
     
     /**
      * Pisteet lasketaan olion luonnin yhteydessä. 
@@ -18,25 +18,29 @@ public class KuvaajanPisteet {
      * @param Matemaattisen yksikön suhde piirtoyksikköön.
      * @param Kahden pisteen etäisyys. 
      */
-    public KuvaajanPisteet(Funktio funktio, double minX, double maxX, int resoluutio, double askel){        
-        boolean parametritKelpaa = laskePisteet(funktio,minX,maxX,resoluutio,askel);
+    public KuvaajanPisteet(Funktio funktio, double minX, double maxX, double minY, double maxY, int resoluutio, double askel){        
+        boolean parametritKelpaa = laskePisteet(funktio,minX,maxX,minY,maxY,resoluutio,askel);
         if(!parametritKelpaa){ 
             throw new IllegalArgumentException();
         }
     }
     
     
-    private boolean laskePisteet(Funktio funktio ,double minX, double maxX,int resoluutio ,double askel){
+    private boolean laskePisteet(Funktio funktio ,double minX, double maxX,double minY, double maxY,int resoluutio ,double askel){
         if(askel > 0 && minX < maxX && resoluutio > 0){
-            for(double x = minX; x <= maxX; x += askel){
-                pisteet.add(new Piste((int) x*resoluutio,(int)funktio.laskeY(x)*resoluutio));
+            for(int x = (int) minX*100; x <= maxX*100; x += askel*100){
+                try{
+                    pisteet.add(new Piste((int)(((double)x/100)*resoluutio+300),(int)(-funktio.laskeY(((double)x/100))*resoluutio+300)));
+                } catch(Exception e){
+                    continue;
+                }    
             }
             return true;
         }
         return false;
     }
     
-    public List<Piste> getPisteet(){
+    public ArrayList<Piste> getPisteet(){
         return pisteet;
     }
     

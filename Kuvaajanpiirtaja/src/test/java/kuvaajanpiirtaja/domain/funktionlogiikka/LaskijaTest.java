@@ -1,20 +1,23 @@
 
 package kuvaajanpiirtaja.domain.funktionlogiikka;
 
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.BeforeClass;
 
 
 public class LaskijaTest {
-    Laskija laskija = new Arvonlaskija();
+    Laskija laskija;
     
     public LaskijaTest() {
     }
-    
+
     @Before
     public void setUp() {
-        
+        laskija = new Arvonlaskija();
     }
     
     @Test
@@ -31,6 +34,19 @@ public class LaskijaTest {
         assertTrue(laskija.etsiLuku(merkkijono).equals("2"));       
     }
     
+    @Test
+    public void etsiLukuToimii2(){
+        String merkkijono = "2E2+3.2";
+        assertTrue(laskija.etsiLuku(merkkijono).equals("2E2"));
+        merkkijono = "-43E32*3.2";
+        assertTrue(laskija.etsiLuku(merkkijono).equals("-43E32"));
+        merkkijono = "7.245E2/3";
+        assertTrue(laskija.etsiLuku(merkkijono).equals("7.245E2"));
+        merkkijono = "56E-3-5";
+        assertTrue(laskija.etsiLuku(merkkijono).equals("56E-3"));
+    
+    }
+    
     @Test 
     public void etsiLukuTaaksepainToimii(){
         String merkkijono = "2+3";
@@ -45,6 +61,15 @@ public class LaskijaTest {
         assertTrue(laskija.etsiLukuTaaksepain(merkkijono).equals("2"));   
     
     }     
+    @Test
+    public void etsiLukuTaaksepainToimii2(){
+        String merkkijono = "3+3E4";
+        assertTrue(laskija.etsiLukuTaaksepain(merkkijono).equals("3E4"));
+        merkkijono = "6^5.33E423";
+        assertTrue(laskija.etsiLukuTaaksepain(merkkijono).equals("5.33E423"));
+        merkkijono = "52*53E-322";
+        assertTrue(laskija.etsiLukuTaaksepain(merkkijono).equals("53E-322"));
+    }
     
     @Test
     public void etsiSulutToimii(){
@@ -67,5 +92,7 @@ public class LaskijaTest {
         String merkkijono = "aef";
         assertTrue(laskija.etsiSulut(merkkijono).equals("aef"));
     }
+
+
 
 }

@@ -1,7 +1,10 @@
 
 package kuvaajanpiirtaja.domain.funktionlogiikka;
 
-
+/**
+ * Yläluokka funktiota käsitteleville luokille. 
+ * 
+ */
 public abstract class Laskija {
     
     /**
@@ -13,11 +16,18 @@ public abstract class Laskija {
         for (int i = 0; i < merkkijono.length(); i++) {
             if (Character.isDigit(merkkijono.charAt(i)) || (merkkijono.charAt(i) == '-')) {
                 for (int n = i + 1; n < merkkijono.length(); n++) {
-                    if (!Character.isDigit(merkkijono.charAt(n)) && (merkkijono.charAt(n) != '.')) {
+                    if(merkkijono.charAt(n) == 'E' && n < merkkijono.length()-2){
+                        if(!Character.isDigit(merkkijono.charAt(n+1)) && merkkijono.charAt(n+1) != '-'){
+                            return merkkijono.substring(i,n);                       
+                        } else if(merkkijono.charAt(n+1) == '-' && !Character.isDigit(merkkijono.charAt(n+2))){
+                            return merkkijono.substring(i,n);
+                        } 
+                        n += 1;                    
+                    } else if (!Character.isDigit(merkkijono.charAt(n)) && (merkkijono.charAt(n) != '.')){
                         return merkkijono.substring(i, n);
                     } else if (n == merkkijono.charAt(merkkijono.length() - 1)) {
                         return merkkijono.substring(i);
-                    }
+                    } 
                 }
                 return merkkijono.substring(i);
             }
@@ -34,10 +44,20 @@ public abstract class Laskija {
         for (int i = merkkijono.length() - 1; i >= 0; i--) {
             if (Character.isDigit(merkkijono.charAt(i))) {
                 for (int n = i - 1; n >= 0; n--) {
-                    if (!Character.isDigit(merkkijono.charAt(n)) && (merkkijono.charAt(n) != '.') && (merkkijono.charAt(n) != '-')) {
+                   if(merkkijono.charAt(n) == 'E' && n > 1){
+                        if(!Character.isDigit(merkkijono.charAt(n-1)) && merkkijono.charAt(n-1) != '-'){
+                            return merkkijono.substring(n,i+1);                       
+                        } else if(merkkijono.charAt(n-1) == '-' && !Character.isDigit(merkkijono.charAt(n-2))){
+                            return merkkijono.substring(n,i-1);
+                        } 
+                        n -= 1;  
+                    
+                    }if (!Character.isDigit(merkkijono.charAt(n)) && (merkkijono.charAt(n) != '.') && (merkkijono.charAt(n) != '-')) {
                         return merkkijono.substring(n + 1, i + 1);
-                    } else if (merkkijono.charAt(n) == '-') {
-                        return merkkijono.substring(n, i + 1);
+                    } else if (merkkijono.charAt(n) == '-' && n != 0) {
+                        if(merkkijono.charAt(n-1) != 'E'){
+                            return merkkijono.substring(n, i + 1);
+                        }
                     } else if (n == merkkijono.charAt(0)) {
                         return merkkijono.substring(i);
                     }

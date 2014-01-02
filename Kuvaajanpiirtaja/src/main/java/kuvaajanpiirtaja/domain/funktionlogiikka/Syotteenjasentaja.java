@@ -1,6 +1,9 @@
 
 package kuvaajanpiirtaja.domain.funktionlogiikka;
 
+/**
+ * Jäsentää käyttäjän antaman syötteen Arvonlaskijan ymmärtämään muotoon.
+ */
 
 public class Syotteenjasentaja {
     
@@ -14,7 +17,10 @@ public class Syotteenjasentaja {
         }
         
     };
-    
+    /**
+     * Tarkistaa syötteen kelvollisuuden.
+     * @return True, jos syöte kelpaa.
+     */
     public boolean syoteKelpaa() {
         if(!syote.contains("x")){
             return false;
@@ -38,6 +44,7 @@ public class Syotteenjasentaja {
     
     private String muotoileSyote(String syote){
         String muotoiltu = syote.toLowerCase(); 
+        muotoiltu = muotoiltu.replace(",",".");
         muotoiltu = muotoiltu.replace(" ", "");
         muotoiltu = muotoiltu.replace("^", "P");
         muotoiltu = muotoiltu.replace("log", "L");

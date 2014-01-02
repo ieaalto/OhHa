@@ -11,10 +11,12 @@ import kuvaajanpiirtaja.domain.*;
 public class Funktiohallinta {
     
     private ArrayList<Funktio> funktiot = new ArrayList<>();
-    private double minX = -1;
-    private double maxX = 1;
-    private int resoluutio = 1;
-    private double askel = 1;
+    private double minX = -10;
+    private double maxX = 10;
+    private double minY = 0.0;
+    private double maxY = 10.0;
+    private int resoluutio = 30;
+    private double askel = 0.5;
     
     public Funktiohallinta(){};
 
@@ -75,7 +77,7 @@ public class Funktiohallinta {
         ArrayList<KuvaajanPisteet> pisteet = new ArrayList<>();
         if(!funktiot.isEmpty()){
             for(Funktio f : funktiot){
-                pisteet.add(new KuvaajanPisteet(f, minX, maxX, resoluutio, askel));
+                pisteet.add(new KuvaajanPisteet(f, minX, maxX, minY, maxY ,resoluutio, askel));
             }
             return pisteet;
         }

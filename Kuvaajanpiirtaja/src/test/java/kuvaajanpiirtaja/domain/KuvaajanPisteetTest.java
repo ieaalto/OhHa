@@ -14,7 +14,7 @@ public class KuvaajanPisteetTest {
     
     @Before
     public void setUp() {
-        pisteet =new KuvaajanPisteet(new Funktio("x + 2"),-1,1,10,0.5);
+        pisteet = new KuvaajanPisteet(new Funktio("x + 2"),-1.0,1.0,1,1,10,0.5);
     }
     
     @Test
@@ -23,16 +23,9 @@ public class KuvaajanPisteetTest {
     }
     
     @Test
-    public void oikeatPisteetLoytyy(){
-        List<Piste> lista = pisteet.getPisteet();
-        for(int i = 0; i < lista.size();i++){
-            assertTrue(lista.get(i).x() == (int)(-1 + i*0.5)*10 );
-        }
-    }
-    @Test
     public void negatiivistaAskeltaEiKelpuuteta(){
         try{
-            pisteet = new KuvaajanPisteet(new Funktio("x + 2"), -1, 1,10,-0.5);
+            pisteet = new KuvaajanPisteet(new Funktio("x + 2"), -1, 1,-1,1,10,-0.5);
         }catch(Exception e){
             return;
         }
@@ -41,7 +34,7 @@ public class KuvaajanPisteetTest {
     @Test
     public void maksimiaSuurempaaMinimiaEiKelpuuteta(){
         try{
-            pisteet = new KuvaajanPisteet(new Funktio("x + 2"), 2, 1,10,0.5);
+            pisteet = new KuvaajanPisteet(new Funktio("x + 2"), 2, 1,2,1,10,0.5);
         }catch(Exception e){
             return;
         }
@@ -50,11 +43,11 @@ public class KuvaajanPisteetTest {
     @Test
     public void epapositiivistaResoluutiotaEiKelpuuteta(){
         try{
-            pisteet = new KuvaajanPisteet(new Funktio("x + 2"), -1, 1,-10,0.5);
+            pisteet = new KuvaajanPisteet(new Funktio("x + 2"), -1, 1,-1,1,-10,0.5);
         }catch(Exception e){
             return;
         } try{
-            pisteet = new KuvaajanPisteet(new Funktio("x + 2"), -1, 1, 0,0.5);
+            pisteet = new KuvaajanPisteet(new Funktio("x + 2"), -1, 1,-1,1, 0,0.5);
         }catch(Exception e){
             return;
         }

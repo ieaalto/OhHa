@@ -1,7 +1,6 @@
 package kuvaajanpiirtaja.domain;
 
 import kuvaajanpiirtaja.domain.funktionlogiikka.Arvonlaskija;
-import kuvaajanpiirtaja.domain.funktionlogiikka.MaarittelyjoukonLaskija;
 import kuvaajanpiirtaja.domain.funktionlogiikka.Syotteenjasentaja;
 
 /**
@@ -10,12 +9,10 @@ import kuvaajanpiirtaja.domain.funktionlogiikka.Syotteenjasentaja;
 public class Funktio {
     
     private Syotteenjasentaja jasentaja;
-    private Maarittelyjoukko maarittelyjoukko;
+    private Arvonlaskija laskija = new Arvonlaskija();
     
     public Funktio(String syote) throws IllegalArgumentException{
           jasentaja = new Syotteenjasentaja(syote);
-          MaarittelyjoukonLaskija laskija = new MaarittelyjoukonLaskija();
-          maarittelyjoukko = laskija.laske(syote);
     }    
     
     /**
@@ -26,12 +23,8 @@ public class Funktio {
      */
     
     public double laskeY(double x) throws NumberFormatException {
-        Arvonlaskija laskija = new Arvonlaskija();
         String funktio = jasentaja.getSyote().replace("x",String.valueOf(x));
         return laskija.laske(funktio);
     }
     
-    public Maarittelyjoukko getMaarittelyjoukko(){
-        return maarittelyjoukko;
-    }
 }

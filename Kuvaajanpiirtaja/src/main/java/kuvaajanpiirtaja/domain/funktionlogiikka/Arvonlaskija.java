@@ -1,6 +1,9 @@
 package kuvaajanpiirtaja.domain.funktionlogiikka;
 
-import java.util.HashMap;
+import java.text.DecimalFormat;
+/**
+ * Laskee String-muotoisen lausekkeen Double-arvon.
+ */
 
 public class Arvonlaskija extends Laskija {   
     
@@ -34,6 +37,20 @@ public class Arvonlaskija extends Laskija {
         }
         
         funktio = poistaOperaattorit(funktio, new char[]{'(',')'});
+        return lueArvoPotenssi(funktio);
+    }
+    
+    
+    private double lueArvoPotenssi(String funktio){
+        for(int i = 1; i < funktio.length(); i++){
+            if(funktio.charAt(i) == 'P'){
+                String a = etsiLukuTaaksepain(funktio.substring(0, i));
+                String b = etsiLuku(funktio.substring(i));
+                funktio = funktio.replaceFirst(a+"P"+b,String.valueOf(Math.floor(Math.pow(Double.parseDouble(a),Double.parseDouble(b))*1000)/1000));
+                i = 0;
+            }     
+        
+        }
         return lueArvoErikoisoperaattorit(funktio);
     }
     
@@ -47,25 +64,25 @@ public class Arvonlaskija extends Laskija {
                     String laskettuOsa = osa;
             
                     if(funktio.charAt(i)=='L'){
-                        laskettuOsa = String.valueOf((double) Math.log10(laske(osa)));
+                        laskettuOsa = String.valueOf(Math.log10(laske(osa)));
                     } else if(funktio.charAt(i)=='N'){                
-                        laskettuOsa = String.valueOf((double) Math.log(laske(osa)));
+                        laskettuOsa = String.valueOf(Math.log(laske(osa)));
                     } else if(funktio.charAt(i)=='S'){
-                        laskettuOsa = String.valueOf((double) Math.sin(laske(osa)));  
+                        laskettuOsa = String.valueOf(Math.sin(laske(osa)));  
                     } else if(funktio.charAt(i)=='C'){
-                        laskettuOsa = String.valueOf((double) Math.cos(laske(osa)));
+                        laskettuOsa = String.valueOf(Math.cos(laske(osa)));
                     } else if(funktio.charAt(i)=='T'){
-                        laskettuOsa = String.valueOf((double) Math.tan(laske(osa)));
+                        laskettuOsa = String.valueOf(Math.tan(laske(osa)));
                     } else if(funktio.charAt(i)=='Z'){
-                        laskettuOsa = String.valueOf((double) Math.asin(laske(osa)));
+                        laskettuOsa = String.valueOf(Math.asin(laske(osa)));
                     } else if(funktio.charAt(i)=='K'){
-                        laskettuOsa = String.valueOf((double) Math.acos(laske(osa)));
+                        laskettuOsa = String.valueOf(Math.acos(laske(osa)));
                     } else if(funktio.charAt(i)=='D'){
-                        laskettuOsa = String.valueOf((double) Math.atan(laske(osa)));
+                        laskettuOsa = String.valueOf(Math.atan(laske(osa)));
                     } else if(funktio.charAt(i)=='R'){
-                        laskettuOsa = String.valueOf((double) Math.sqrt(laske(osa)));
+                        laskettuOsa = String.valueOf(Math.sqrt(laske(osa)));
                     } else if(funktio.charAt(i)=='A'){
-                        laskettuOsa = String.valueOf((double) Math.abs(laske(osa)));
+                        laskettuOsa = String.valueOf(Math.abs(laske(osa)));
                     }   
             
                     funktio = funktio.replaceFirst("("+osa+")", laskettuOsa);
@@ -73,25 +90,22 @@ public class Arvonlaskija extends Laskija {
             }        
         }
         funktio = poistaOperaattorit(funktio, korvattavat);
-        return  lueArvoKertoJakoPotenssi(funktio);        
+        return  lueArvoKertoJako(funktio);        
     }
         
     
-    private double lueArvoKertoJakoPotenssi(String funktio) throws NumberFormatException{
+    private double lueArvoKertoJako(String funktio) throws NumberFormatException{
         for(int i = 1; i < funktio.length(); i++){
-            if(funktio.charAt(i) == '*' ||  funktio.charAt(i)== '/' || funktio.charAt(i)=='P'){
+            if(funktio.charAt(i) == '*' ||  funktio.charAt(i)== '/'){
                 String a = etsiLukuTaaksepain(funktio.substring(0, i));
                 String b = etsiLuku(funktio.substring(i));
                 if(funktio.charAt(i) == '*'){
-                    funktio = funktio.replaceFirst(a+"[*]"+b, String.valueOf((double)Double.parseDouble(a)*Double.parseDouble(b))) ;
+                    funktio = funktio.replaceFirst(a+"[*]"+b, String.valueOf(Double.parseDouble(a)*Double.parseDouble(b))) ;
                     i = 0;
                 }else if(funktio.charAt(i) == '/'){
-                    funktio = funktio.replaceFirst(a+"/"+b , String.valueOf((double)Double.parseDouble(a)/Double.parseDouble(b))) ;
+                    funktio = funktio.replaceFirst(a+"/"+b , String.valueOf(Double.parseDouble(a)/Double.parseDouble(b)));
                     i = 0;
-                }else if(funktio.charAt(i) == 'P'){
-                    funktio = funktio.replaceFirst(a+"P"+b,String.valueOf((double)Math.pow(Double.parseDouble(a),Double.parseDouble(b))));
-                    i = 0;
-                }     
+                }    
             }
         }
         return lueArvoPlusMiinus(funktio);
@@ -100,15 +114,15 @@ public class Arvonlaskija extends Laskija {
     
     private double lueArvoPlusMiinus(String funktio) throws NumberFormatException{
         
-        for(int i = 1; i < funktio.length(); i++){
+        for(int i = 1; i < funktio.length()-1; i++){
             if(funktio.charAt(i) == '+' ||  funktio.charAt(i)== '-'){
                 String a = etsiLukuTaaksepain(funktio.substring(0,i));
                 String b = etsiLuku(funktio.substring(i+1));
                 if(funktio.charAt(i) == '+'){
-                    funktio = funktio.replaceFirst(a+"[+]"+b, String.valueOf((double)Double.parseDouble(a)+Double.parseDouble(b))) ;
+                    funktio = funktio.replaceFirst(a+"[+]"+b, String.valueOf(Double.parseDouble(a)+Double.parseDouble(b))) ;
                     i = 0;
-                }else if(funktio.charAt(i) == '-') {
-                    funktio = funktio.replaceFirst(a+"-"+b, String.valueOf((double)Double.parseDouble(a)-Double.parseDouble(b))) ;
+                }else if(funktio.charAt(i) == '-' && funktio.charAt(i-1)!='E') {
+                    funktio = funktio.replaceFirst(a+"-"+b, String.valueOf(Double.parseDouble(a)-Double.parseDouble(b))) ;
                     i = 0;
                 }
             }     
