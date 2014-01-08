@@ -1,4 +1,4 @@
-package kuvaajanpiirtaja.domain;
+package kuvaajanpiirtaja.logiikka;
 /**
  * Piste (x,y)-koordinaatiostossa.
  */

@@ -1,9 +1,9 @@
 
 package kuvaajanpiirtaja.logiikka;
 
-import kuvaajanpiirtaja.logiikka.Funktiohallinta;
 import java.util.ArrayList;
-import kuvaajanpiirtaja.domain.KuvaajanPisteet;
+import kuvaajanpiirtaja.logiikka.Funktiohallinta;
+import kuvaajanpiirtaja.logiikka.KuvaajanPisteet;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -32,7 +32,15 @@ public class FunktiohallintaTest {
     @Test
     public void funktioitaEiLisataVaarallaSyotteella2(){
         assertTrue(!hallinta.lisaaFunktio("x + L + 2"));
-        assertTrue(!hallinta.lisaaFunktio(""));
+        assertTrue(!hallinta.lisaaFunktio("x++2"));
+        assertTrue(!hallinta.lisaaFunktio("+x*/2"));
+    }
+    
+    @Test
+    public void funktioitaEiLisataVaarallaSyotteella3(){
+        assertTrue(!hallinta.lisaaFunktio("3*/x"));
+        assertTrue(!hallinta.lisaaFunktio("-x+2//3"));
+        assertTrue(!hallinta.lisaaFunktio("*2+x/"));
     }
     
     @Test
@@ -64,19 +72,28 @@ public class FunktiohallintaTest {
     @Test
     public void laskePisteetPalauttaaArrayListinJosFunktioitaLisatty(){
         hallinta.lisaaFunktio("x + 2");
-        ArrayList<KuvaajanPisteet> lista = hallinta.laskePisteet();
+        ArrayList<ArrayList<Piste>> lista = hallinta.laskePisteet();
         assertTrue(lista.size() > 0);
     }
     
     @Test
     public void laskePisteetPalauttaaYhtaPitkanListanKuinFunktioita(){
-        ArrayList<KuvaajanPisteet> lista;
+        ArrayList<ArrayList<Piste>> lista;
         for(int i = 0; i < 10; i++){
                     hallinta.lisaaFunktio("x + 2");
                     lista = hallinta.laskePisteet();
                     assertTrue(lista.size()==i+1);
         }
         
+    }
+    
+    @Test
+    public void tyhjennaTyhjentaaFunktiohallinnan(){
+        hallinta.lisaaFunktio("x + 2");
+        hallinta.lisaaFunktio("x^2");
+        hallinta.lisaaFunktio("sin(x)");
+        hallinta.tyhjenna();
+        assertTrue(hallinta.laskePisteet() == null);
     }
 
 }

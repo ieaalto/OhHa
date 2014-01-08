@@ -1,0 +1,1733 @@
+<html>
+<head>
+<style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+border: 1px solid #dddddd;
+padding-top: 10px;
+padding-right: 5px;
+padding-left: 5px;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+</style>
+
+</head>
+<body>
+
+
+<h1>Laskija.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_1'/>
+1
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_1'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_2'/>
+2
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_2'></a>
+</td>
+<td class=''><pre><span  class=''>package kuvaajanpiirtaja.logiikka.funktionlogiikka;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_3'/>
+3
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_3'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_4'/>
+4
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_4'></a>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_5'/>
+5
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_5'></a>
+</td>
+<td class=''><pre><span  class=''> * Yl&#195;&#164;luokka funktiota k&#195;&#164;sitteleville luokille. </span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_6'/>
+6
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_6'></a>
+</td>
+<td class=''><pre><span  class=''> * </span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_7'/>
+7
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_7'></a>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_8'/>
+8
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_8'></a>
+</td>
+<td class='covered'><pre><span  class=''>public abstract class Laskija {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_9'/>
+9
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_9'></a>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_10'/>
+10
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_10'></a>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_11'/>
+11
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_11'></a>
+</td>
+<td class=''><pre><span  class=''>     * Palauttaa merkkijonon ensimm&#195;&#164;isen luvun. Esim. sy&#195;&#182;tteell&#195;&#164; -2.5+2 palauttaa -2.5. </span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_12'/>
+12
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_12'></a>
+</td>
+<td class=''><pre><span  class=''>     * @param merkkijono </span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_13'/>
+13
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_13'></a>
+</td>
+<td class=''><pre><span  class=''>     * @return L&#195;&#182;ydetty luku;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_14'/>
+14
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_14'></a>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_15'/>
+15
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_15'></a>
+</td>
+<td class=''><pre><span  class=''>    public String etsiLuku(String merkkijono) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_16'/>
+16
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_16'></a>
+</td>
+<td class='covered'><pre><span  class=''>        merkkijono =  merkkijono.replace(&#34;Infinity&#34;,&#34;I&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_17'/>
+17
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_17'>3</a>
+</td>
+<td class='covered'><pre><span  class='survived'>        for (int i = 0; i &#60; merkkijono.length(); i++) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_18'/>
+18
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_18'>3</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (Character.isDigit(merkkijono.charAt(i)) || (merkkijono.charAt(i) == &#39;-&#39;) || merkkijono.charAt(i) == &#39;I&#39;) {    </span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_19'/>
+19
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_19'>4</a>
+</td>
+<td class='covered'><pre><span  class='killed'>                for (int n = i + 1; n &#60; merkkijono.length(); n++) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_20'/>
+20
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_20'>4</a>
+</td>
+<td class='covered'><pre><span  class='survived'>                    if(merkkijono.charAt(n) == &#39;E&#39; &#38;&#38; n &#60; merkkijono.length()-2){</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_21'/>
+21
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_21'>2</a>
+</td>
+<td class='covered'><pre><span  class='survived'>                        if(eenSisaltavaLukuPaattyy(merkkijono, n, i, 1))return merkkijono.substring(i,n).replace(&#34;I&#34;,&#34;Infinity&#34;); </span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_22'/>
+22
+</td>
+<td class='uncertain'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_22'>1</a>
+</td>
+<td class='covered'><pre><span  class='uncertain'>                        n += 1;                    </span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_23'/>
+23
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_23'>3</a>
+</td>
+<td class='covered'><pre><span  class='killed'>                    } else if (!Character.isDigit(merkkijono.charAt(n)) &#38;&#38; (merkkijono.charAt(n) != &#39;.&#39;) &#38;&#38; merkkijono.charAt(n) != &#39;I&#39;){</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_24'/>
+24
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_24'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>                        return merkkijono.substring(i, n).replace(&#34;I&#34;,&#34;Infinity&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_25'/>
+25
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_25'></a>
+</td>
+<td class=''><pre><span  class=''>                    } </span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_26'/>
+26
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_26'></a>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_27'/>
+27
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_27'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>                return merkkijono.substring(i).replace(&#34;I&#34;,&#34;Infinity&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_28'/>
+28
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_28'></a>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_29'/>
+29
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_29'></a>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_30'/>
+30
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_30'>1</a>
+</td>
+<td class='covered'><pre><span  class='survived'>        return &#34;0&#34;;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_31'/>
+31
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_31'></a>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_32'/>
+32
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_32'></a>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_33'/>
+33
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_33'></a>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_34'/>
+34
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_34'></a>
+</td>
+<td class=''><pre><span  class=''>     * Palauttaa merkkijonon viimeisen luvun. Esim sy&#195;&#182;tteell&#195;&#164; -2.5+2 palauttaa 2.</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_35'/>
+35
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_35'></a>
+</td>
+<td class=''><pre><span  class=''>     * @param merkkijono</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_36'/>
+36
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_36'></a>
+</td>
+<td class=''><pre><span  class=''>     * @return L&#195;&#182;ydetty luku.</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_37'/>
+37
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_37'></a>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_38'/>
+38
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_38'></a>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_39'/>
+39
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_39'></a>
+</td>
+<td class=''><pre><span  class=''>    public String etsiLukuTaaksepain(String merkkijono) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_40'/>
+40
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_40'></a>
+</td>
+<td class='covered'><pre><span  class=''>        merkkijono = merkkijono.replace(&#34;Infinity&#34;,&#34;I&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_41'/>
+41
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_41'>4</a>
+</td>
+<td class='covered'><pre><span  class='survived'>        for (int i = merkkijono.length() - 1; i &#62;= 0; i--) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_42'/>
+42
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_42'>2</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (Character.isDigit(merkkijono.charAt(i)) || merkkijono.charAt(i) == &#39;I&#39;) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_43'/>
+43
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_43'>4</a>
+</td>
+<td class='covered'><pre><span  class='survived'>                for (int n = i - 1; n &#62;= 0; n--) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_44'/>
+44
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_44'>3</a>
+</td>
+<td class='covered'><pre><span  class='survived'>                   if(merkkijono.charAt(n) == &#39;E&#39; &#38;&#38; n &#62; 1){</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_45'/>
+45
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_45'>3</a>
+</td>
+<td class='covered'><pre><span  class='survived'>                        if(eenSisaltavaLukuPaattyy(merkkijono, n, i,-1))return merkkijono.substring(n,i+1).replace(&#34;I&#34;,&#34;Infinity&#34;); </span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_46'/>
+46
+</td>
+<td class='uncertain'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_46'>1</a>
+</td>
+<td class='covered'><pre><span  class='uncertain'>                        n -= 1;  </span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_47'/>
+47
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_47'></a>
+</td>
+<td class=''><pre><span  class=''>                    </span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_48'/>
+48
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_48'>3</a>
+</td>
+<td class='covered'><pre><span  class='killed'>                    }if (!Character.isDigit(merkkijono.charAt(n)) &#38;&#38; (merkkijono.charAt(n) != &#39;.&#39;) &#38;&#38; (merkkijono.charAt(n) != &#39;-&#39;)) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_49'/>
+49
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_49'>3</a>
+</td>
+<td class='covered'><pre><span  class='killed'>                        return merkkijono.substring(n + 1, i + 1).replace(&#34;I&#34;,&#34;Infinity&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_50'/>
+50
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_50'>2</a>
+</td>
+<td class='covered'><pre><span  class='killed'>                    } else if (merkkijono.charAt(n) == &#39;-&#39; &#38;&#38; n != 0) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_51'/>
+51
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_51'>2</a>
+</td>
+<td class='covered'><pre><span  class='killed'>                        if(Character.isDigit(merkkijono.charAt(n-1))){</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_52'/>
+52
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_52'>3</a>
+</td>
+<td class='covered'><pre><span  class='killed'>                            return merkkijono.substring(n+1, i+1).replace(&#34;I&#34;,&#34;Infinity&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_53'/>
+53
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_53'>2</a>
+</td>
+<td class='covered'><pre><span  class='killed'>                        }else if(merkkijono.charAt(n-1) != &#39;E&#39; ){</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_54'/>
+54
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_54'>2</a>
+</td>
+<td class='covered'><pre><span  class='killed'>                            return merkkijono.substring(n, i + 1).replace(&#34;I&#34;,&#34;Infinity&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_55'/>
+55
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_55'></a>
+</td>
+<td class=''><pre><span  class=''>                        }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_56'/>
+56
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_56'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_57'/>
+57
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_57'></a>
+</td>
+<td class=''><pre><span  class=''>                    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_58'/>
+58
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_58'></a>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_59'/>
+59
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_59'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>                return merkkijono.replace(&#34;I&#34;,&#34;Infinity&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_60'/>
+60
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_60'></a>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_61'/>
+61
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_61'></a>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_62'/>
+62
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_62'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        return &#34;0&#34;;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_63'/>
+63
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_63'></a>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_64'/>
+64
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_64'></a>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_65'/>
+65
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_65'></a>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_66'/>
+66
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_66'></a>
+</td>
+<td class=''><pre><span  class=''>     * Etsii merkkijonon ensimm&#195;&#164;isten sulujen sis&#195;&#164;ll&#195;&#182;n. Esim. sy&#195;&#182;tteell&#195;&#164; ((2+2)-2)+(3-1) palauttaa (2+2)-2.</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_67'/>
+67
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_67'></a>
+</td>
+<td class=''><pre><span  class=''>     * @param merkkijono</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_68'/>
+68
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_68'></a>
+</td>
+<td class=''><pre><span  class=''>     * @return L&#195;&#182;ydetty merkkijono</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_69'/>
+69
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_69'></a>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_70'/>
+70
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_70'></a>
+</td>
+<td class=''><pre><span  class=''>    public String etsiSulut(String merkkijono) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_71'/>
+71
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_71'></a>
+</td>
+<td class='covered'><pre><span  class=''>        int sulut = 0;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_72'/>
+72
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_72'></a>
+</td>
+<td class='covered'><pre><span  class=''>        int alku = 0;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_73'/>
+73
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_73'>3</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (int i = 0; i &#60; merkkijono.length(); i++) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_74'/>
+74
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_74'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (merkkijono.charAt(i) == &#39;(&#39;) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_75'/>
+75
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_75'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>                if (sulut == 0) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_76'/>
+76
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_76'></a>
+</td>
+<td class='covered'><pre><span  class=''>                    alku = i;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_77'/>
+77
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_77'></a>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_78'/>
+78
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_78'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>                sulut++;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_79'/>
+79
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_79'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            } else if (merkkijono.charAt(i) == &#39;)&#39;) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_80'/>
+80
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_80'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>                sulut--;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_81'/>
+81
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_81'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>                if (sulut == 0) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_82'/>
+82
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_82'>2</a>
+</td>
+<td class='covered'><pre><span  class='killed'>                    return merkkijono.substring(alku + 1, i);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_83'/>
+83
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_83'></a>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_84'/>
+84
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_84'></a>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_85'/>
+85
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_85'></a>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_86'/>
+86
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_86'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        return merkkijono;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_87'/>
+87
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_87'></a>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_88'/>
+88
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_88'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_89'/>
+89
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_89'></a>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_90'/>
+90
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_90'></a>
+</td>
+<td class=''><pre><span  class=''>    private boolean eenSisaltavaLukuPaattyy(String merkkijono, int n, int i, int suunta) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_91'/>
+91
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_91'>4</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (!Character.isDigit(merkkijono.charAt(n+suunta)) &#38;&#38; merkkijono.charAt(n+suunta) != &#39;-&#39;) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_92'/>
+92
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_92'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>            return true;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_93'/>
+93
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_93'>5</a>
+</td>
+<td class='covered'><pre><span  class='survived'>        } else if (merkkijono.charAt(n+suunta) == &#39;-&#39; &#38;&#38; !Character.isDigit(merkkijono.charAt(n+suunta*2))) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_94'/>
+94
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_94'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>            return true;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_95'/>
+95
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_95'></a>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_96'/>
+96
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_96'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        return false;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_97'/>
+97
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_97'></a>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_98'/>
+98
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_98'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_99'/>
+99
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_99'></a>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_100'/>
+100
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_100'></a>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_101'/>
+101
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_101'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_17'>17</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_17'/> 
+
+<p class='KILLED'>Changed increment from 1 to -1 : KILLED -> kuvaajanpiirtaja.logiikka.FunktioTest.laskeYPalauttaaOikeanLuvunPerusoperaattorit(kuvaajanpiirtaja.logiikka.FunktioTest)</p> <p class='SURVIVED'>changed conditional boundary : SURVIVED</p> <p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_18'>18</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_18'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuLoytaaAarettoman(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_19'>19</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_19'/> 
+
+<p class='KILLED'>Replaced integer addition with subtraction : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>changed conditional boundary : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>Changed increment from 1 to -1 : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_20'>20</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_20'/> 
+
+<p class='SURVIVED'>Replaced integer subtraction with addition : SURVIVED</p> <p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='SURVIVED'>changed conditional boundary : SURVIVED</p> <p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii2(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_21'>21</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_21'/> 
+
+<p class='SURVIVED'>mutated return of Object value for kuvaajanpiirtaja/logiikka/funktionlogiikka/Laskija::etsiLuku to ( if (x != null) null else throw new RuntimeException ) : SURVIVED</p> <p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii2(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_22'>22</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_22'/> 
+
+<p class='TIMED_OUT'>Changed increment from 1 to -1 : TIMED_OUT</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_23'>23</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_23'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_24'>24</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_24'/> 
+
+<p class='KILLED'>mutated return of Object value for kuvaajanpiirtaja/logiikka/funktionlogiikka/Laskija::etsiLuku to ( if (x != null) null else throw new RuntimeException ) : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_27'>27</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_27'/> 
+
+<p class='KILLED'>mutated return of Object value for kuvaajanpiirtaja/logiikka/funktionlogiikka/Laskija::etsiLuku to ( if (x != null) null else throw new RuntimeException ) : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_30'>30</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_30'/> 
+
+<p class='SURVIVED'>mutated return of Object value for kuvaajanpiirtaja/logiikka/funktionlogiikka/Laskija::etsiLuku to ( if (x != null) null else throw new RuntimeException ) : SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_41'>41</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_41'/> 
+
+<p class='SURVIVED'>Changed increment from -1 to 1 : SURVIVED</p> <p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainLoytaaAarettoman(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>Replaced integer subtraction with addition : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainLoytaaAarettoman(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>changed conditional boundary : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainLoytaaAarettoman(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_42'>42</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_42'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainLoytaaAarettoman(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_43'>43</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_43'/> 
+
+<p class='SURVIVED'>changed conditional boundary : SURVIVED</p> <p class='KILLED'>Replaced integer subtraction with addition : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainLoytaaAarettoman(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>Changed increment from -1 to 1 : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainLoytaaAarettoman(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_44'>44</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_44'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='SURVIVED'>changed conditional boundary : SURVIVED</p> <p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainToimii2(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_45'>45</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_45'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainToimii2(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='SURVIVED'>mutated return of Object value for kuvaajanpiirtaja/logiikka/funktionlogiikka/Laskija::etsiLukuTaaksepain to ( if (x != null) null else throw new RuntimeException ) : SURVIVED</p> <p class='SURVIVED'>Replaced integer addition with subtraction : SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_46'>46</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_46'/> 
+
+<p class='TIMED_OUT'>Changed increment from -1 to 1 : TIMED_OUT</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_48'>48</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_48'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainLoytaaAarettoman(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_49'>49</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_49'/> 
+
+<p class='KILLED'>Replaced integer addition with subtraction : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>mutated return of Object value for kuvaajanpiirtaja/logiikka/funktionlogiikka/Laskija::etsiLukuTaaksepain to ( if (x != null) null else throw new RuntimeException ) : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>Replaced integer addition with subtraction : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_50'>50</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_50'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainLoytaaAarettoman(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainLoytaaAarettoman(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_51'>51</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_51'/> 
+
+<p class='KILLED'>Replaced integer subtraction with addition : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainLoytaaAarettoman(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainLoytaaAarettoman(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_52'>52</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_52'/> 
+
+<p class='KILLED'>mutated return of Object value for kuvaajanpiirtaja/logiikka/funktionlogiikka/Laskija::etsiLukuTaaksepain to ( if (x != null) null else throw new RuntimeException ) : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainLoytaaAarettoman(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>Replaced integer addition with subtraction : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainLoytaaAarettoman(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>Replaced integer addition with subtraction : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainLoytaaAarettoman(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_53'>53</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_53'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainToimii2(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>Replaced integer subtraction with addition : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainToimii2(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_54'>54</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_54'/> 
+
+<p class='KILLED'>Replaced integer addition with subtraction : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainLoytaaAarettoman(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>mutated return of Object value for kuvaajanpiirtaja/logiikka/funktionlogiikka/Laskija::etsiLukuTaaksepain to ( if (x != null) null else throw new RuntimeException ) : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainLoytaaAarettoman(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_59'>59</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_59'/> 
+
+<p class='KILLED'>mutated return of Object value for kuvaajanpiirtaja/logiikka/funktionlogiikka/Laskija::etsiLukuTaaksepain to ( if (x != null) null else throw new RuntimeException ) : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainLoytaaAarettoman(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_62'>62</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_62'/> 
+
+<p class='NO_COVERAGE'>mutated return of Object value for kuvaajanpiirtaja/logiikka/funktionlogiikka/Laskija::etsiLukuTaaksepain to ( if (x != null) null else throw new RuntimeException ) : NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_73'>73</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_73'/> 
+
+<p class='KILLED'>changed conditional boundary : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiSulutEiSulkuja(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiSulutToimiiSisakkaisetSulut(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>Changed increment from 1 to -1 : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiSulutEiSulkuja(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_74'>74</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_74'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiSulutToimiiSisakkaisetSulut(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_75'>75</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_75'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiSulutToimiiSisakkaisetSulut(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_78'>78</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_78'/> 
+
+<p class='KILLED'>Changed increment from 1 to -1 : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiSulutToimiiSisakkaisetSulut(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_79'>79</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_79'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiSulutToimiiSisakkaisetSulut(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_80'>80</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_80'/> 
+
+<p class='KILLED'>Changed increment from -1 to 1 : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiSulutToimiiSisakkaisetSulut(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_81'>81</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_81'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiSulutToimiiSisakkaisetSulut(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_82'>82</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_82'/> 
+
+<p class='KILLED'>Replaced integer addition with subtraction : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiSulutToimiiSisakkaisetSulut(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>mutated return of Object value for kuvaajanpiirtaja/logiikka/funktionlogiikka/Laskija::etsiSulut to ( if (x != null) null else throw new RuntimeException ) : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiSulutToimiiSisakkaisetSulut(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_86'>86</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_86'/> 
+
+<p class='KILLED'>mutated return of Object value for kuvaajanpiirtaja/logiikka/funktionlogiikka/Laskija::etsiSulut to ( if (x != null) null else throw new RuntimeException ) : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiSulutEiSulkuja(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_91'>91</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_91'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii2(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>Replaced integer addition with subtraction : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii2(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>Replaced integer addition with subtraction : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainToimii2(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii2(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_92'>92</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_92'/> 
+
+<p class='NO_COVERAGE'>replaced return of integer sized value with (x == 0 ? 1 : 0) : NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_93'>93</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_93'/> 
+
+<p class='SURVIVED'>Replaced integer addition with subtraction : SURVIVED</p> <p class='KILLED'>Replaced integer multiplication with division : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii2(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='SURVIVED'>Replaced integer addition with subtraction : SURVIVED</p> <p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii2(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> <p class='KILLED'>negated conditional : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii2(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_94'>94</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_94'/> 
+
+<p class='NO_COVERAGE'>replaced return of integer sized value with (x == 0 ? 1 : 0) : NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1f3d1f5_96'>96</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1f3d1f5_96'/> 
+
+<p class='KILLED'>replaced return of integer sized value with (x == 0 ? 1 : 0) : KILLED -> kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii2(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest)</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+
+<li class='mutator'>MATH_MUTATOR</li>
+
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainToimii2(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest) (2 ms)</li><li>kuvaajanpiirtaja.logiikka.FunktiohallintaTest.laskePisteetPalauttaaYhtaPitkanListanKuinFunktioita(kuvaajanpiirtaja.logiikka.FunktiohallintaTest) (440 ms)</li><li>kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuLoytaaAarettoman(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest) (2 ms)</li><li>kuvaajanpiirtaja.logiikka.FunktioTest.LaskeYPalauttaaOikeanLuvunPerusoperaattorit2(kuvaajanpiirtaja.logiikka.FunktioTest) (3 ms)</li><li>kuvaajanpiirtaja.logiikka.FunktioTest.laskeYPalauttaaOikeanLuvunPerusoperaattorit(kuvaajanpiirtaja.logiikka.FunktioTest) (2 ms)</li><li>kuvaajanpiirtaja.logiikka.FunktioTest.LaskeYMiinusmerkkiToimiiOikein(kuvaajanpiirtaja.logiikka.FunktioTest) (19 ms)</li><li>kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiSulutEiSulkuja(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest) (2 ms)</li><li>kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest) (1 ms)</li><li>kuvaajanpiirtaja.logiikka.FunktioTest.LaskeYPalauttaaOikeanLuvunErikoisoperaattorit(kuvaajanpiirtaja.logiikka.FunktioTest) (3 ms)</li><li>kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiSulutToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest) (4 ms)</li><li>kuvaajanpiirtaja.logiikka.FunktioTest.LaskeYPalauttaaOikeanLuvunErikoisoperaattorit2(kuvaajanpiirtaja.logiikka.FunktioTest) (3 ms)</li><li>kuvaajanpiirtaja.logiikka.FunktioTest.laskeYPalauttaaOikeanLuvunSulut(kuvaajanpiirtaja.logiikka.FunktioTest) (3 ms)</li><li>kuvaajanpiirtaja.logiikka.FunktiohallintaTest.laskePisteetPalauttaaArrayListinJosFunktioitaLisatty(kuvaajanpiirtaja.logiikka.FunktiohallintaTest) (30 ms)</li><li>kuvaajanpiirtaja.logiikka.KuvaajanPisteetTest.palauttaaOikeanMaaranListoja(kuvaajanpiirtaja.logiikka.KuvaajanPisteetTest) (12 ms)</li><li>kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuToimii2(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest) (1 ms)</li><li>kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainToimii(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest) (2 ms)</li><li>kuvaajanpiirtaja.logiikka.KuvaajanPisteetTest.pisteitaOikeaMaara(kuvaajanpiirtaja.logiikka.KuvaajanPisteetTest) (6 ms)</li><li>kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiSulutToimiiSisakkaisetSulut(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest) (3 ms)</li><li>kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest.etsiLukuTaaksepainLoytaaAarettoman(kuvaajanpiirtaja.logiikka.funktionlogiikka.LaskijaTest) (2 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 0.30
+
+</body>
+</html>

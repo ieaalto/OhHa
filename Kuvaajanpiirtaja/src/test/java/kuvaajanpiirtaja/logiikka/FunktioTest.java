@@ -1,6 +1,7 @@
 
-package kuvaajanpiirtaja.domain;
+package kuvaajanpiirtaja.logiikka;
 
+import kuvaajanpiirtaja.logiikka.Funktio;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -70,4 +71,14 @@ public class FunktioTest {
         f = new Funktio("tan(atan(x))");
         assertTrue(f.laskeY(0.5) == (double) Math.tan(Math.atan(0.5)));        
     }
+    
+   @Test
+   public void LaskeYMiinusmerkkiToimiiOikein(){
+       Funktio f = new Funktio("x^3-x^2");
+       assertTrue(f.laskeY(2) == Math.pow(2,3)-Math.pow(2,2));
+       f = new Funktio("x*3-2*2");
+       assertTrue(f.laskeY(1.2) == 1.2*3-4);
+       f = new Funktio("x-2/3");
+       assertTrue(f.laskeY(1) == 1.0-2.0/3.0);
+   }
 }

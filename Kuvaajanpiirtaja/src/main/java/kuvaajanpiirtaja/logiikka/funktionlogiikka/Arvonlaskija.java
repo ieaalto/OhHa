@@ -1,4 +1,4 @@
-package kuvaajanpiirtaja.domain.funktionlogiikka;
+package kuvaajanpiirtaja.logiikka.funktionlogiikka;
 
 import java.text.DecimalFormat;
 /**
@@ -42,11 +42,11 @@ public class Arvonlaskija extends Laskija {
     
     
     private double lueArvoPotenssi(String funktio){
-        for(int i = 1; i < funktio.length(); i++){
+        for(int i = 1; i < funktio.length()-1; i++){
             if(funktio.charAt(i) == 'P'){
                 String a = etsiLukuTaaksepain(funktio.substring(0, i));
                 String b = etsiLuku(funktio.substring(i));
-                funktio = funktio.replaceFirst(a+"P"+b,String.valueOf(Math.floor(Math.pow(Double.parseDouble(a),Double.parseDouble(b))*1000)/1000));
+                funktio = funktio.replaceFirst(a+"P"+b, String.valueOf(Math.pow(Double.parseDouble(a),Double.parseDouble(b))));
                 i = 0;
             }     
         
@@ -85,9 +85,12 @@ public class Arvonlaskija extends Laskija {
                         laskettuOsa = String.valueOf(Math.abs(laske(osa)));
                     }   
             
-                    funktio = funktio.replaceFirst("("+osa+")", laskettuOsa);
+                    funktio = funktio.substring(0,i)+funktio.substring(i).replaceFirst(osa, laskettuOsa);
                 }
             }        
+        }
+        if(funktio.contains("NaN")){
+            throw new NumberFormatException();
         }
         funktio = poistaOperaattorit(funktio, korvattavat);
         return  lueArvoKertoJako(funktio);        
@@ -95,7 +98,7 @@ public class Arvonlaskija extends Laskija {
         
     
     private double lueArvoKertoJako(String funktio) throws NumberFormatException{
-        for(int i = 1; i < funktio.length(); i++){
+        for(int i = 1; i < funktio.length()-1; i++){
             if(funktio.charAt(i) == '*' ||  funktio.charAt(i)== '/'){
                 String a = etsiLukuTaaksepain(funktio.substring(0, i));
                 String b = etsiLuku(funktio.substring(i));
@@ -114,6 +117,7 @@ public class Arvonlaskija extends Laskija {
     
     private double lueArvoPlusMiinus(String funktio) throws NumberFormatException{
         
+        funktio = funktio.replace("--","+");
         for(int i = 1; i < funktio.length()-1; i++){
             if(funktio.charAt(i) == '+' ||  funktio.charAt(i)== '-'){
                 String a = etsiLukuTaaksepain(funktio.substring(0,i));

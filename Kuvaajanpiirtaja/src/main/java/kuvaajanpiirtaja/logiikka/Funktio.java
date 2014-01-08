@@ -1,7 +1,7 @@
-package kuvaajanpiirtaja.domain;
+package kuvaajanpiirtaja.logiikka;
 
-import kuvaajanpiirtaja.domain.funktionlogiikka.Arvonlaskija;
-import kuvaajanpiirtaja.domain.funktionlogiikka.Syotteenjasentaja;
+import kuvaajanpiirtaja.logiikka.funktionlogiikka.Arvonlaskija;
+import kuvaajanpiirtaja.logiikka.funktionlogiikka.Syotteenjasentaja;
 
 /**
  * Laskee konstruktorissa annettavan funktion arvoja.

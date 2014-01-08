@@ -2,7 +2,6 @@ package kuvaajanpiirtaja.logiikka;
 
 import java.util.ArrayList;
 import java.util.List;
-import kuvaajanpiirtaja.domain.*;
 
 /**
  *  Hallinnoi funktioita
@@ -13,10 +12,9 @@ public class Funktiohallinta {
     private ArrayList<Funktio> funktiot = new ArrayList<>();
     private double minX = -10;
     private double maxX = 10;
-    private double minY = 0.0;
-    private double maxY = 10.0;
-    private int resoluutio = 30;
-    private double askel = 0.5;
+    private int kerroinY = 30;
+    private int kerroinX = 30;
+    private double askel = 0.1;
     
     public Funktiohallinta(){};
 
@@ -37,13 +35,20 @@ public class Funktiohallinta {
     }
 
     /**
-     * Asettaa piirtoresoluution, siis kuinka monta pikseliä ruudulla vastaa yhtä matemaattista yksikköä. 
+     * Asettaa x-akselin piirtokertoimen, siis kuinka monta pikseliä ruudulla vastaa yhtä matemaattista yksikköä. 
      * @param resoluutio
      */
-    public void setResoluutio(int resoluutio) {
-        this.resoluutio = resoluutio;
+    public void setKerroinX(int kerroin) {
+        this.kerroinX = kerroin;
     }
 
+    /**
+     * 
+     */
+    public void setKerroinY(int kerroin){
+        this.kerroinY = kerroin;
+    }
+    
     /**
      * Asettaa käyrän pisteiden laskemisessa käytettävän askeleen pituuden, siis kahden pisteen etäisyyden x-akselilla.
      * @param askel Askeleen pituus.
@@ -52,6 +57,12 @@ public class Funktiohallinta {
         this.askel = askel;
     }
         
+    /**
+     * Tyhjentää funktiohallinnan.
+     */
+    public void tyhjenna(){
+        funktiot.clear();
+    }
     
     /**
      * Lisää funktion. 
@@ -73,11 +84,12 @@ public class Funktiohallinta {
      * Luo ja palauttaa List<KayranPisteet> -olion, joka sisältää jokaiselle funktiolle luodun KuvaajanPisteet -olion. 
      * @return  ArrayList<KayranPisteet> tai null, jos yhtään funktiota ei ole lisatty.
      */
-    public ArrayList<KuvaajanPisteet> laskePisteet(){
-        ArrayList<KuvaajanPisteet> pisteet = new ArrayList<>();
+    public ArrayList<ArrayList<Piste>> laskePisteet(){
+        ArrayList<ArrayList<Piste>> pisteet = new ArrayList<>();
+        KuvaajanPisteet kuvaajanPisteet = new KuvaajanPisteet();
         if(!funktiot.isEmpty()){
             for(Funktio f : funktiot){
-                pisteet.add(new KuvaajanPisteet(f, minX, maxX, minY, maxY ,resoluutio, askel));
+                pisteet.addAll(kuvaajanPisteet.laskePisteet(f, minX, maxX, kerroinY, kerroinX, askel));
             }
             return pisteet;
         }

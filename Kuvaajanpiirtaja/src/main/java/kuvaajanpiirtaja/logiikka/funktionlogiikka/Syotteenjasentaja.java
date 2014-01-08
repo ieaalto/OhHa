@@ -1,5 +1,8 @@
 
-package kuvaajanpiirtaja.domain.funktionlogiikka;
+package kuvaajanpiirtaja.logiikka.funktionlogiikka;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Jäsentää käyttäjän antaman syötteen Arvonlaskijan ymmärtämään muotoon.
@@ -7,7 +10,8 @@ package kuvaajanpiirtaja.domain.funktionlogiikka;
 
 public class Syotteenjasentaja {
     
-    private char[] sallitutMerkit = {'x','A','Z','D','K','.','1','2','3','4','5','6','7','8','9','0','P','L','N','C','T','S','R','(',')','/','*','-','+'};
+    private List<Character> sallitutMerkit = Arrays.asList('x','A','Z','D','K','.','1','2','3','4','5','6','7','8','9','0','P','L','N','C','T','S','R','(',')','/','*','-','+');
+    private List<Character> eivatSaaOllaPerakkain = Arrays.asList('P','/','*','+');
     private String syote;
     
     public Syotteenjasentaja(String syote){
@@ -25,18 +29,22 @@ public class Syotteenjasentaja {
         if(!syote.contains("x")){
             return false;
         }
-        for(int i = 0; i < syote.length(); i++){
-            int osumat = 0;
-            for(char c : sallitutMerkit){
-                if(c == syote.charAt(i)){
-                    osumat++;
-                }                
-            } if (osumat == 0 ){
+        for(int i = 0; i < syote.length(); i++){ 
+            if(!sallitutMerkit.contains(syote.charAt(i))){
                 return false;
-            }
+            } if (eivatSaaOllaPerakkain.contains(syote.charAt(i)) || syote.charAt(i) == '-'){
+                if(i < syote.length()-2){
+                    if(eivatSaaOllaPerakkain.contains(syote.charAt(i+1))){
+                        return false;
+                    }
+                } if (syote.charAt(i) != '-' &&(i == 0 || i == syote.length()-1)){
+                    return false;
+                }
+            }    
         }
         return true;
     }
+    
     
     public String getSyote(){
         return syote;

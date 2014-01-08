@@ -1,6 +1,8 @@
 
-package kuvaajanpiirtaja.domain.funktionlogiikka;
+package kuvaajanpiirtaja.logiikka.funktionlogiikka;
 
+import kuvaajanpiirtaja.logiikka.funktionlogiikka.Arvonlaskija;
+import kuvaajanpiirtaja.logiikka.funktionlogiikka.Laskija;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -52,13 +54,13 @@ public class LaskijaTest {
         String merkkijono = "2+3";
         assertTrue(laskija.etsiLukuTaaksepain(merkkijono).equals("3"));
         merkkijono = "5.2*3-2.8";
-        assertTrue(laskija.etsiLukuTaaksepain(merkkijono).equals("-2.8"));
+        assertTrue(laskija.etsiLukuTaaksepain(merkkijono).equals("2.8"));
         merkkijono = "-5.2*3+7.1";
         assertTrue(laskija.etsiLukuTaaksepain(merkkijono).equals("7.1"));
         merkkijono = "526/34";
         assertTrue(laskija.etsiLukuTaaksepain(merkkijono).equals("34"));
-        merkkijono = "2";
-        assertTrue(laskija.etsiLukuTaaksepain(merkkijono).equals("2"));   
+        merkkijono = "-2";
+        assertTrue(laskija.etsiLukuTaaksepain(merkkijono).equals("-2"));   
     
     }     
     @Test
@@ -70,6 +72,28 @@ public class LaskijaTest {
         merkkijono = "52*53E-322";
         assertTrue(laskija.etsiLukuTaaksepain(merkkijono).equals("53E-322"));
     }
+    
+    @Test
+    public void etsiLukuLoytaaAarettoman(){
+        String merkkijono = "Infinity";
+        assertTrue(laskija.etsiLuku(merkkijono).equals("Infinity"));
+        merkkijono = "Infinity*3";
+        assertTrue(laskija.etsiLuku(merkkijono).equals("Infinity"));
+        merkkijono = "-Infinity*3";
+        assertTrue(laskija.etsiLuku(merkkijono).equals("-Infinity"));
+    }
+    
+    @Test
+    public void etsiLukuTaaksepainLoytaaAarettoman(){
+        String merkkijono = "Infinity";
+        assertTrue(laskija.etsiLukuTaaksepain(merkkijono).equals("Infinity"));
+        merkkijono = "4-Infinity";
+        assertTrue(laskija.etsiLukuTaaksepain(merkkijono).equals("Infinity"));
+        merkkijono = "4*-Infinity";
+        assertTrue(laskija.etsiLukuTaaksepain(merkkijono).equals("-Infinity"));
+    }
+    
+    
     
     @Test
     public void etsiSulutToimii(){

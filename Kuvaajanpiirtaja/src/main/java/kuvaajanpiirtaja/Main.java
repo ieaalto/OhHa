@@ -7,7 +7,7 @@ public class Main {
         public static void main(String[] args){
             
             Funktiohallinta funktiohallinta = new Funktiohallinta();
-            funktiohallinta.lisaaFunktio("1.25*x^2 + 1/4*x^3");
+            funktiohallinta.lisaaFunktio("sqt(abs(x)-1)");
             Kayttoliittyma kayttoliittyma = new Kayttoliittyma(funktiohallinta);
 
             kayttoliittyma.run();

@@ -5,32 +5,41 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import javax.swing.JPanel;
-import kuvaajanpiirtaja.domain.KuvaajanPisteet;
+import kuvaajanpiirtaja.logiikka.Funktiohallinta;
+import kuvaajanpiirtaja.logiikka.Piste;
 
 /**
  *  Pohja, jolle kuvaajat piirretään.
- * @author Iiro
  */
 
 public class KuvaajanAlusta extends JPanel{
     
-    private ArrayList<PisteitaSeuraavaKayra> kayrat = new ArrayList<>();
+    private Funktiohallinta funktiohallinta;
     
-    public KuvaajanAlusta(){
-        super.setBackground(Color.WHITE);        
+    public KuvaajanAlusta(Funktiohallinta funktiohallinta){
+        super.setBackground(Color.WHITE);    
+        this.funktiohallinta = funktiohallinta;
     }
-    
-    public void lisaaKayra(KuvaajanPisteet pisteet){
-        kayrat.add(new PisteitaSeuraavaKayra(pisteet.getPisteet()));
-    }
-    
+
     
     @Override
-    protected void paintComponent(Graphics graphics) {
+    protected void paintComponent(Graphics graphics) {      
+       
         super.paintComponent(graphics);
-        for(PisteitaSeuraavaKayra k : kayrat){
-              k.piirra(graphics);
-        }
-
+        
+        graphics.setColor(Color.LIGHT_GRAY);
+        graphics.drawLine(0, 300, 600, 300);
+        graphics.drawLine(300, 0, 300, 600);
+           
+        graphics.setColor(Color.BLACK);
+        
+        ArrayList<ArrayList<Piste>> pistelistat= funktiohallinta.laskePisteet();
+        if(pistelistat != null) {
+            for(ArrayList<Piste> pisteet : pistelistat){
+                PisteitaSeuraavaKayra kayra = new PisteitaSeuraavaKayra(pisteet);
+                kayra.piirra(graphics);
+            }
+        } 
+        
     }
 }
