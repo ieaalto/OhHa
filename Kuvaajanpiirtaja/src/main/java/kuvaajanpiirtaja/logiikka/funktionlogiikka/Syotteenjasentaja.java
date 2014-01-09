@@ -14,19 +14,20 @@ public class Syotteenjasentaja {
     private List<Character> eivatSaaOllaPerakkain = Arrays.asList('P','/','*','+');
     private String syote;
     
-    public Syotteenjasentaja(String syote){
+    public Syotteenjasentaja(String syote, boolean onFunktio){
         this.syote = muotoileSyote(syote);
-        if(!syoteKelpaa()){
+        if(!syoteKelpaa(onFunktio)){
             throw new IllegalArgumentException();
         }
         
-    };
+    }
+    
     /**
      * Tarkistaa syötteen kelvollisuuden.
      * @return True, jos syöte kelpaa.
      */
-    public boolean syoteKelpaa() {
-        if(!syote.contains("x")){
+    public boolean syoteKelpaa(boolean onFunktio) {
+        if(onFunktio && !syote.contains("x")){
             return false;
         }
         for(int i = 0; i < syote.length(); i++){ 

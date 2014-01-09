@@ -16,7 +16,7 @@ public class Main {
            //     double b = f.laskeY(Math.floor(x*1000)/1000);
        //}
         //System.out.println(f.laskeY(-9.9));
-        System.out.println(laskija.laske("0.32"));
+        System.out.println(laskija.laske("2.0*2.0"));
 
       //  }
         

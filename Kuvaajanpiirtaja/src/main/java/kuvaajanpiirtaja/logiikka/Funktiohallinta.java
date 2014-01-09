@@ -80,6 +80,9 @@ public class Funktiohallinta {
         return true;
     }
     
+    public Funktio getFunktio(int i){
+        return funktiot.get(i);
+    }
     /**
      * Luo ja palauttaa List<KayranPisteet> -olion, joka sisältää jokaiselle funktiolle luodun KuvaajanPisteet -olion. 
      * @return  ArrayList<KayranPisteet> tai null, jos yhtään funktiota ei ole lisatty.

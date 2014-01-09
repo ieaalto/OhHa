@@ -12,7 +12,7 @@ public class Funktio {
     private Arvonlaskija laskija = new Arvonlaskija();
     
     public Funktio(String syote) throws IllegalArgumentException{
-          jasentaja = new Syotteenjasentaja(syote);
+          jasentaja = new Syotteenjasentaja(syote, true);
     }    
     
     /**
