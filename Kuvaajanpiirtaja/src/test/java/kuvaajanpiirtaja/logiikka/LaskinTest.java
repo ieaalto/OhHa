@@ -19,10 +19,10 @@ public class LaskinTest {
     
     @Before
     public void setUp() {
-        funktiohallinta.lisaaFunktio("x-1");
-        funktiohallinta.lisaaFunktio("x-2");
-        funktiohallinta.lisaaFunktio("x-3");
-        funktiohallinta.lisaaFunktio("x-4");
+        funktiohallinta.lisaaFunktio("x-1",0);
+        funktiohallinta.lisaaFunktio("x-2",1);
+        funktiohallinta.lisaaFunktio("x-3",2);
+        funktiohallinta.lisaaFunktio("x-4",3);
     }
 
     @Test
@@ -48,7 +48,7 @@ public class LaskinTest {
            assertTrue(String.valueOf(laskin.laskeLauseke("f3(2.0*2.0)")),laskin.laskeLauseke("f3(2.0*2.0)") == 1.0);
         } catch(Exception e){ fail(); 
         } try{
-            assertTrue(String.valueOf(laskin.laskeLauseke("f4((sqt(5))^2)")),Math.floor(laskin.laskeLauseke("f4((sqt(5))^2)")) == 1.0);
+            assertTrue(String.valueOf(laskin.laskeLauseke("f4(sqt(5)^2)")), laskin.laskeLauseke("f4(sqt(5)^2)") == 1.0);
         } catch(Exception e){ fail(); 
         }
     }

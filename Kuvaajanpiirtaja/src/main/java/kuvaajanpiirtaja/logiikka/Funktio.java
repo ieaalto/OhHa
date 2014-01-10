@@ -9,9 +9,10 @@ import kuvaajanpiirtaja.logiikka.funktionlogiikka.Syotteenjasentaja;
 public class Funktio {
     
     private Syotteenjasentaja jasentaja;
-    private Arvonlaskija laskija = new Arvonlaskija();
+    private Arvonlaskija laskija;
     
-    public Funktio(String syote) throws IllegalArgumentException{
+    public Funktio(String syote, Funktiohallinta funktiohallinta) throws IllegalArgumentException{
+          laskija = new Arvonlaskija(funktiohallinta);
           jasentaja = new Syotteenjasentaja(syote, true);
     }    
     
@@ -22,7 +23,7 @@ public class Funktio {
      * @throws NumberFormatException Jos arvon laskeminen ei onnistunut. 
      */
     
-    public double laskeY(double x) throws NumberFormatException {
+    public double laskeY(double x) throws Exception {
         String funktio = jasentaja.getSyote().replace("x",String.valueOf(x));
         return laskija.laske(funktio);
     }

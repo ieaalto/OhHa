@@ -45,7 +45,15 @@ public class PisteitaSeuraavaKayra {
         }
     }
     
-    
+    /**
+     * Laskee piirra QuadCurven kontrollipisteen, eli lähtöpisteeseen ja maalipisteeseen piirrettyjen tangenttien leikkauspisteen.
+     * @param a lähtöpistettä edeltävä piste
+     * @param b lähtöpiste
+     * @param c maalipiste
+     * @param d maalipisteen jälkeinen piste
+     * @return kontrollipiste
+     * @throws NullPointerException 
+     */
     private Piste laskeKontrollipiste(Piste a, Piste b, Piste c, Piste d) throws NullPointerException{
         double[] ab;
         double[]cd;
@@ -62,23 +70,39 @@ public class PisteitaSeuraavaKayra {
         return kpiste;
     }
     
-    
+    /**
+     * Laskee pisteen b kasvunopeuden pisteiden a ja c avulla. Palauttaa siis pisteiden a ja b sekä b ja c välisten kasvunopeuksien keskiarvon.
+     * @param a  edeltävä piste
+     * @param b  keskipiste
+     * @param c  seuraava piste
+     * @return kasvunopeus pisteessä b
+     */
     private double  laskeKasvunopeus(Piste a, Piste b, Piste c){
         double nopeusAB = ((double)b.y()-(double)a.y())/((double)b.x()-(double)a.x());        
         double nopeusBC = ((double)c.y()-(double)b.y())/((double)c.x()-(double)b.x());
-        return (double)(nopeusAB + nopeusBC)/2;
+        return (double)Math.floor((nopeusAB + nopeusBC)*100)/200;
     }
     
-    
+    /**
+     * Laskee parametrina annettujen kertoimen ja pisteen pohjalta suoran leikkauspisteen y-akselin kanssa, ja palautta suoran double[]-muodossa.
+     * @param a piste suoralla
+     * @param kerroin
+     * @return kaksialkioinen double[], jossa ensimmäinen alkio on tangentin kulmakerroin ja toinen leikkauspiste y-akselin kanssa. 
+     */
     private double[] laskeTangentti(Piste a, double kerroin){
         double yynleikkaus = (double)a.y() - (double)a.x()*kerroin;
         return new double[]{kerroin,yynleikkaus};
     }
     
-    
+    /**
+     * Laskee tangenttien leikkauspisteen. Tangentin annetaan laskeTangentti-metodin määrittämässä double[]-muodossa. 
+     * @param a ensimmäinen tangentti
+     * @param b toinen tangentti
+     * @return leikkauspiste
+     */
     private Piste laskeTangenttienLeikkaus(double[] a, double[] b){
         if(a[0] != b[0]){
-            double leikkauksenX = (double)((double)b[1]-(double)a[1])/((double)a[0]-(double)b[0]);
+            double leikkauksenX = ((double)b[1]-(double)a[1])/((double)a[0]-(double)b[0]);
             double leikkauksenY = ((double)b[0]*leikkauksenX+(double)b[1]);
         
             return new Piste((int)leikkauksenX,(int)leikkauksenY);

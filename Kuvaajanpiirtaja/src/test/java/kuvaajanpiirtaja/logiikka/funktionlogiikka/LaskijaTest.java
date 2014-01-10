@@ -1,14 +1,10 @@
 
 package kuvaajanpiirtaja.logiikka.funktionlogiikka;
 
-import kuvaajanpiirtaja.logiikka.funktionlogiikka.Arvonlaskija;
-import kuvaajanpiirtaja.logiikka.funktionlogiikka.Laskija;
-import org.junit.After;
-import org.junit.AfterClass;
+import kuvaajanpiirtaja.logiikka.Funktiohallinta;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.BeforeClass;
 
 
 public class LaskijaTest {
@@ -19,11 +15,11 @@ public class LaskijaTest {
 
     @Before
     public void setUp() {
-        laskija = new Arvonlaskija();
+        laskija = new Arvonlaskija(new Funktiohallinta());
     }
     
     @Test
-    public void etsiLukuToimii(){
+    public void etsiLukuToimii() throws Exception{
         String merkkijono = "2+3";
         assertTrue(laskija.etsiLuku(merkkijono).equals("2"));
         merkkijono = "5.2*3-2";
@@ -37,7 +33,7 @@ public class LaskijaTest {
     }
     
     @Test
-    public void etsiLukuToimii2(){
+    public void etsiLukuToimii2() throws Exception{
         String merkkijono = "2E2+3.2";
         assertTrue(laskija.etsiLuku(merkkijono).equals("2E2"));
         merkkijono = "-43E32*3.2";
@@ -50,7 +46,7 @@ public class LaskijaTest {
     }
     
     @Test 
-    public void etsiLukuTaaksepainToimii(){
+    public void etsiLukuTaaksepainToimii() throws Exception{
         String merkkijono = "2+3";
         assertTrue(laskija.etsiLukuTaaksepain(merkkijono).equals("3"));
         merkkijono = "5.2*3-2.8";
@@ -64,7 +60,7 @@ public class LaskijaTest {
     
     }     
     @Test
-    public void etsiLukuTaaksepainToimii2(){
+    public void etsiLukuTaaksepainToimii2() throws Exception{
         String merkkijono = "3+3E4";
         assertTrue(laskija.etsiLukuTaaksepain(merkkijono).equals("3E4"));
         merkkijono = "6^5.33E423";
@@ -74,7 +70,7 @@ public class LaskijaTest {
     }
     
     @Test
-    public void etsiLukuLoytaaAarettoman(){
+    public void etsiLukuLoytaaAarettoman() throws Exception{
         String merkkijono = "Infinity";
         assertTrue(laskija.etsiLuku(merkkijono).equals("Infinity"));
         merkkijono = "Infinity*3";
@@ -84,7 +80,7 @@ public class LaskijaTest {
     }
     
     @Test
-    public void etsiLukuTaaksepainLoytaaAarettoman(){
+    public void etsiLukuTaaksepainLoytaaAarettoman() throws Exception{
         String merkkijono = "Infinity";
         assertTrue(laskija.etsiLukuTaaksepain(merkkijono).equals("Infinity"));
         merkkijono = "4-Infinity";
@@ -96,14 +92,14 @@ public class LaskijaTest {
     
     
     @Test
-    public void etsiSulutToimii(){
+    public void etsiSulutToimii() throws Exception{
         String merkkijono = "(2+3)";
         assertTrue(laskija.etsiSulut(merkkijono).equals("2+3"));
         merkkijono = "(aef)+2";
         assertTrue(laskija.etsiSulut(merkkijono).equals("aef"));
     }
     @Test
-    public void etsiSulutToimiiSisakkaisetSulut(){        
+    public void etsiSulutToimiiSisakkaisetSulut() throws Exception{        
        String merkkijono = "((3-4)+2)";
        assertTrue(laskija.etsiSulut(merkkijono).equals("(3-4)+2"));
        merkkijono = "((3+2) - (2+(3-2)))";
@@ -112,7 +108,7 @@ public class LaskijaTest {
     }
      
     @Test 
-    public void etsiSulutEiSulkuja(){
+    public void etsiSulutEiSulkuja() throws Exception{
         String merkkijono = "aef";
         assertTrue(laskija.etsiSulut(merkkijono).equals("aef"));
     }

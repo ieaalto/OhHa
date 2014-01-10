@@ -1,0 +1,8 @@
+Kuvaajanpiirtäjän ytimessä on luokka funktiohallinta, jonka kautta eri luokat pääsevät käsiksi funktioihin. Funktiohallinta on pääasiallinen yhteys käyttöliittymän ja logiikan välillä. Funktiohallintaan liittyy luokka Asetukset, johon käyttäjän määrittämät asetukset tallennetaan. Asetukset laskee niiden pohjalta kuvaajan piirtämiseen tarvittavat vakiot.  
+
+Funktio-luokan tehtävä on laskea tietyn funktion arvoja. Se tekee niin luokkien Syotteenjasentaja ja Arvonlaskija avulla. Syotteenjasentaja tarkistaa syötteen kelvollisuuden ja muotoilee sen Arvonlaskijan ymmärtämään muotoon. Arvonlaskija puolestaan laskee sille syötetyn lausekkeen(merkkijonon) arvon, mikäli se on syntaktisesti oikein. 
+
+KuvaajanPisteet-luokka laskee kuvaajan piirtämiseen käytettävät pisteet. Käyttöliittymä pääsee näihin pisteisiin käsiksi funktiohallinnan kautta. Käyttöliittymän luokista oleellinen on PisteitaSeuraavaKayra.
+PisteitaSeuraavaKayra piirtää parametrina saatujen pisteiden läpi kulkevan käyrän. Se ei itse tunne lainkaan piirtämäänsä funktiota, vaan ainoastaan KuvaajanPisteet-luokan laskemat pisteet. 
+
+Laskin-luokan kautta käyttöliittymä pääsee suoraan käsiksi Arvonlaskijan ja Syotteenjasentajan syötteentulkinta- ja laskutoiminnallisuuteen käyttöliittymän laskinkentän tarpeita varten.   

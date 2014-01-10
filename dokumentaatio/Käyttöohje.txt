@@ -1,0 +1,43 @@
+
+Kuvaajanpiirtäjä piirtää kuvaajat enintään neljälle funktiolle. Näiden funktioiden arvoja pystyy laskemaan laskintoiminnolla. Piirrä - painike piirtää kaikki määritellyt funktiot.
+
+
+Funktioiden syöttäminen:
+
+
+Muuttuja merkitään syötteessä aina x.
+
+Sulkuja voi ja kannattaa käyttää mielin määrin.
+
+Syöte saa sisältää seuraavia laskutoimituksia:
+	
+    - plus, miinus, kerto, jako, merkitään +, -, *, /
+    - potenssi, merkitään ^, esim. x^2
+    
+Sekä seuraavia funktioita:
+
+    - yleisimmät trigonometriset funktiot ja arkusfunktiot, merkitään sin, cos, tan, asin, acos, atan
+    - 10- ja n-kantainen logaritmi, merkitään log ja ln
+    - neliöjuuri, merkitään sqt
+    - itseisarvo, merkitään abs
+    - omat funktiot f1-f4, viittaavat samannimisiin tekstikenttiin, esim f1(2) = 4, kun f1 = x^2
+  
+Funktioiden syötearvo merkitään funktion tunnuksen perään suluilla tai ilman, esimerkiksi sinx, sin(x) tai sin(x+1) ovat kaikki kelvollisia syötteitä. 
+
+Ohjelma ilmoittaa oikeasta alaidassa sijaitsevassa virhekentässä hyväksyttiinkö syöte.  
+
+
+Asetukset 
+
+
+Asetukset määrittävät piirtoalueen rajat. Piirtoalueen vasen alakulma vastaa siis siis pistettä (MinX, MinY) ja oikea yläkulma pistettä (maxX, maxY). Minimien tulee olla maksimeita pienempiä. 
+
+
+Tallenna kuvatiedostoon
+
+
+Tallenna kuvatiedostoon -painike tallentaa piirtoalueen sisällön .png -muotoiseen kuvatiedostoon. 
+
+
+
+	 

@@ -21,7 +21,17 @@
             <version>4.10</version>
             <scope>test</scope>
         </dependency>
-    </dependencies>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-utils</artifactId>
+            <version>1.1</version>
+        </dependency>
+        </dependencies>
     
     <build>
         <plugins>
@@ -54,7 +64,21 @@
                         <param>kuvaajanpiirtaja.domain.funktionlogiikka*</param>
                     </targetTests>
                 </configuration>
-            </plugin>
+            </plugin> 
+             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+        
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>kuvaajanpiirtaja.Main</mainClass>
+                       </manifest>
+                    </archive>
+               </configuration>
+        
+             </plugin>            
         </plugins>
     </build>
 </project>

@@ -20,3 +20,12 @@ Lis‰toiminnot
 -derivaatta & integraali
 -x:n arvon laskeminen y:n arvolla
 -vakioiden m‰‰rittely, esimerkiksi m‰‰ritet‰‰n a = 2, jolloin x + a luetaan x + 2
+
+
+Lopulliset toiminnot: 
+
+-K‰ytt‰j‰ m‰‰ritt‰‰ enint‰‰n 4 funktiota.
+-Piirt‰‰ kuvaajat
+-Laskee lausekkeita. esim 1+2 tai f1(2)*sqt(2)
+-K‰ytt‰j‰ voi m‰‰ritt‰‰ asetukset minX, maxX, minY ja maxY
+-Tallentaa piirtokent‰n sis‰llˆn kuvatiedostoon.

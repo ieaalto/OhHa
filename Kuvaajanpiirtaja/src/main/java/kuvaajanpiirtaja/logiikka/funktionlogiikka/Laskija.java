@@ -2,7 +2,7 @@
 package kuvaajanpiirtaja.logiikka.funktionlogiikka;
 
 /**
- * Yläluokka funktiota käsitteleville luokille. 
+ * Yläluokka funktiota käsitteleville luokille. Määrittelee metodit lukujen sekä sulkujen sisällön hakemiseen.
  * 
  */
 public abstract class Laskija {
@@ -12,13 +12,13 @@ public abstract class Laskija {
      * @param merkkijono 
      * @return Löydetty luku;
      */
-    public String etsiLuku(String merkkijono) {
+    public String etsiLuku(String merkkijono) throws Exception{
         merkkijono =  merkkijono.replace("Infinity","I");
         for (int i = 0; i < merkkijono.length(); i++) {
             if (Character.isDigit(merkkijono.charAt(i)) || (merkkijono.charAt(i) == '-') || merkkijono.charAt(i) == 'I') {    
                 for (int n = i + 1; n < merkkijono.length(); n++) {
                     if(merkkijono.charAt(n) == 'E' && n < merkkijono.length()-2){
-                        if(eenSisaltavaLukuPaattyy(merkkijono, n, i, 1))return merkkijono.substring(i,n).replace("I","Infinity"); 
+                        if(eenSisaltavaLukuPaattyy(merkkijono, n, 1)) return merkkijono.substring(i,n).replace("I","Infinity"); 
                         n += 1;                    
                     } else if (!Character.isDigit(merkkijono.charAt(n)) && (merkkijono.charAt(n) != '.') && merkkijono.charAt(n) != 'I'){
                         return merkkijono.substring(i, n).replace("I","Infinity");
@@ -36,17 +36,17 @@ public abstract class Laskija {
      * @return Löydetty luku.
      */
     
-    public String etsiLukuTaaksepain(String merkkijono) {
+    public String etsiLukuTaaksepain(String merkkijono) throws Exception {
         merkkijono = merkkijono.replace("Infinity","I");
         for (int i = merkkijono.length() - 1; i >= 0; i--) {
             if (Character.isDigit(merkkijono.charAt(i)) || merkkijono.charAt(i) == 'I') {
                 for (int n = i - 1; n >= 0; n--) {
                    if(merkkijono.charAt(n) == 'E' && n > 1){
-                        if(eenSisaltavaLukuPaattyy(merkkijono, n, i,-1))return merkkijono.substring(n,i+1).replace("I","Infinity"); 
+                        if(eenSisaltavaLukuPaattyy(merkkijono, n, -1))return merkkijono.substring(n,i+1).replace("I","Infinity"); 
                         n -= 1;  
                     
                     }if (!Character.isDigit(merkkijono.charAt(n)) && (merkkijono.charAt(n) != '.') && (merkkijono.charAt(n) != '-')) {
-                        return merkkijono.substring(n + 1, i + 1).replace("I","Infinity");
+                        return merkkijono.substring(n+1, i+1).replace("I","Infinity");
                     } else if (merkkijono.charAt(n) == '-' && n != 0) {
                         if(Character.isDigit(merkkijono.charAt(n-1))){
                             return merkkijono.substring(n+1, i+1).replace("I","Infinity");
@@ -67,7 +67,7 @@ public abstract class Laskija {
      * @param merkkijono
      * @return Löydetty merkkijono
      */
-    public String etsiSulut(String merkkijono) {
+    public String etsiSulut(String merkkijono) throws Exception{
         int sulut = 0;
         int alku = 0;
         for (int i = 0; i < merkkijono.length(); i++) {
@@ -83,14 +83,23 @@ public abstract class Laskija {
                 }
             }
         }
+        if(sulut > 0){
+            throw new IllegalArgumentException();
+        }
         return merkkijono;
     }
 
-    
-    private boolean eenSisaltavaLukuPaattyy(String merkkijono, int n, int i, int suunta) {
-        if (!Character.isDigit(merkkijono.charAt(n+suunta)) && merkkijono.charAt(n+suunta) != '-') {
+    /**
+     * Tarkistaa päättyykkö E:n sisältävä luku merkkijonon kohdassa i. 
+     * @param merkkijono
+     * @param i 
+     * @param suunta suunta, johon merkkijonoa luetaan
+     * @return true jos luku päättyy.
+     */
+    private boolean eenSisaltavaLukuPaattyy(String merkkijono, int i, int suunta) {
+        if (!Character.isDigit(merkkijono.charAt(i+suunta)) && merkkijono.charAt(i+suunta) != '-') {
             return true;
-        } else if (merkkijono.charAt(n+suunta) == '-' && !Character.isDigit(merkkijono.charAt(n+suunta*2))) {
+        } else if (merkkijono.charAt(i+suunta) == '-' && !Character.isDigit(merkkijono.charAt(i+suunta*2))) {
             return true;
         }
         return false;

@@ -10,10 +10,15 @@ import java.util.List;
 
 public class Syotteenjasentaja {
     
-    private List<Character> sallitutMerkit = Arrays.asList('x','A','Z','D','K','.','1','2','3','4','5','6','7','8','9','0','P','L','N','C','T','S','R','(',')','/','*','-','+');
+    private List<Character> sallitutMerkit = Arrays.asList('x','A','Z','D','K','.','1','2','3','4','5','6','7','8','9','0','P','L','N','C','T','S','R','(',')','/','*','-','+','F','G','H','J');
     private List<Character> eivatSaaOllaPerakkain = Arrays.asList('P','/','*','+');
     private String syote;
     
+    /**
+     * Muotoilee syötteen, heittää poikkeuksen jos syöte on virheellinen.
+     * @param syote
+     * @param onFunktio true, jos syöte on funktio, false jos lauseke. 
+     */
     public Syotteenjasentaja(String syote, boolean onFunktio){
         this.syote = muotoileSyote(syote);
         if(!syoteKelpaa(onFunktio)){
@@ -24,10 +29,13 @@ public class Syotteenjasentaja {
     
     /**
      * Tarkistaa syötteen kelvollisuuden.
+     * @param onFunktio jos true, tulee syötteen sisältää muuttuja x, jos false, se ei saa sisältää muuttujaa. 
      * @return True, jos syöte kelpaa.
      */
     public boolean syoteKelpaa(boolean onFunktio) {
         if(onFunktio && !syote.contains("x")){
+            return false;
+        } else if (!onFunktio &&syote.contains("x")){
             return false;
         }
         for(int i = 0; i < syote.length(); i++){ 
@@ -51,6 +59,11 @@ public class Syotteenjasentaja {
         return syote;
     }
     
+    /**
+     * Muotoilee syötteen Arvonlaskija ymmärtämään muotoon.
+     * @param syote
+     * @return muotoiltu syöte.
+     */
     private String muotoileSyote(String syote){
         String muotoiltu = syote.toLowerCase(); 
         muotoiltu = muotoiltu.replace(",",".");
@@ -66,8 +79,12 @@ public class Syotteenjasentaja {
         muotoiltu = muotoiltu.replace("tan", "T");
         muotoiltu = muotoiltu.replace("sqt", "R");
         muotoiltu = muotoiltu.replace("abs", "A");
-        muotoiltu = muotoiltu.replace("pi", "3.14159");
-        muotoiltu = muotoiltu.replace("e","2.71828");
+        muotoiltu = muotoiltu.replace("pi", String.valueOf(Math.PI));
+        muotoiltu = muotoiltu.replace("e",String.valueOf(Math.E));
+        muotoiltu = muotoiltu.replace("f1","F");
+        muotoiltu = muotoiltu.replace("f2","G");
+        muotoiltu = muotoiltu.replace("f3","H");
+        muotoiltu = muotoiltu.replace("f4","J");
         return muotoiltu;
     }
     

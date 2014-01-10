@@ -10,3 +10,5 @@
 6.1   4 tuntia, ohjelmointia
 7.1   4 tuntia, ohjelmointia, 
 8.1   4 tuntia, ohjelmointia, sekvenssikaavioita 
+9.1   5 tuntia, ohjelmointia
+10.1  5 tuntia, ohjelmointia, javadocia, dokumentaatiota, muuta viimeistelyä.
