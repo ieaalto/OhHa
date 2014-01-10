@@ -24,6 +24,8 @@ Sekä seuraavia funktioita:
   
 Funktioiden syötearvo merkitään funktion tunnuksen perään suluilla tai ilman, esimerkiksi sinx, sin(x) tai sin(x+1) ovat kaikki kelvollisia syötteitä. 
 
+Huom! Muuttujan kertoimet tulee aina merkitä kertomerkin kanssa. Siis 2*x, ei 2x ! 
+
 Ohjelma ilmoittaa oikeasta alaidassa sijaitsevassa virhekentässä hyväksyttiinkö syöte.  
 
 
